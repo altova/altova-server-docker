@@ -1,0 +1,47 @@
+# Docker Compose file for Altova Server Platform
+
+# This includes the following server products - feel free to add or remove from below as needed, or modify the corresponding Dockerfiles:
+# - Altova License Server
+# - FlowForce Server Advanced
+# - MapForce Server Advanced
+# - StyleVision Server
+# - RaptorXML Server
+# - MobileTogether Server Advanced
+# - DiffDog Server
+
+services:
+  licenseserver:
+    build: licenseserver
+    ports:
+      - "8088:8088" # Altova License Server Admin Interface
+      - "35355:35355" # Altova License Server RPC Interface
+    volumes:
+      - licenseserver_data:/var/opt/Altova
+  flowforceserveradv:
+    build: flowforceserveradv
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "8082:8082" # FlowForce Server Advanced Web Interface
+      - "4646:4646" # FlowForce Server Advanced RPC Interface  
+      - "8087:8087" # RaptorXML Server Interface
+      - "29800:29800" # DiffDog Server Interface
+    depends_on:
+      - licenseserver
+    volumes:
+      - flowforceserver_data:/var/opt/Altova
+  mobiletogetherserveradv:
+    build: mobiletogetherserveradv
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "8083:8083" # MobileTogether Server Advanced Client & Web Interface
+      - "8085:8085" # MobileTogether Server Advanced Admin Interface
+    depends_on:
+      - licenseserver
+    volumes:
+      - mobiletogetherserver_data:/var/opt/Altova
+volumes:
+  licenseserver_data:
+  flowforceserver_data:
+  mobiletogetherserver_data:

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns="http://www.altova.com/schemas/altova/raptorxml/config" xsi:schemaLocation="http://www.altova.com/schemas/altova/raptorxml/config http://www.altova.com/schemas/altova/raptorxml/config.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<language>en</language>
+
+	<server.unrestricted-filesystem-access>false</server.unrestricted-filesystem-access>
+	<server.output-root-dir>/var/opt/Altova/RaptorXMLServer2025/output/</server.output-root-dir>
+	<server.script-root-dir>/opt/Altova/RaptorXMLServer2025/etc/scripts/</server.script-root-dir>
+	<!--<server.default-script-api-version>2</server.default-script-api-version>-->
+	<!--<server.catalog-file>custom-catalog.xml</server.catalog-file>-->
+	<server.log-file>/var/log/Altova/RaptorXMLServer2025/server.log</server.log-file>
+
+	<http.enable>true</http.enable>
+	<http.environment>production</http.environment>
+	<http.socket-host>0.0.0.0</http.socket-host>
+	<http.socket-port>8087</http.socket-port>
+	<http.log-screen>true</http.log-screen>
+	<http.access-file>/var/log/Altova/RaptorXMLServer2025/access.log</http.access-file>
+	<http.error-file>/var/log/Altova/RaptorXMLServer2025/error.log</http.error-file>
+
+	<https.enable>false</https.enable>
+	<https.socket-host>0.0.0.0</https.socket-host>
+	<https.socket-port>443</https.socket-port>
+	<https.private-key>/path/to/key.pem</https.private-key>
+	<https.certificate>/path/to/cert.pem</https.certificate>
+	<!--<https.certificate-chain>/path/to/chain.pem</https.certificate-chain>-->
+</config>
