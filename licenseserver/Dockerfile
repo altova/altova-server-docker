@@ -9,8 +9,7 @@ RUN apt-get update
 RUN apt-get install -y wget ca-certificates libidn12 libgssapi-krb5-2 libfontconfig1 libqt5gui5 libqt5widgets5 libldap-2.4 tzdata gpg default-jre sqlite3
 
 # install app
-# RUN wget ${AltovaServerURL}${licenseserverServerInstaller}
-COPY ${licenseserverServerInstaller} /${licenseserverServerInstaller}
+RUN wget ${AltovaServerURL}${licenseserverServerInstaller}
 RUN dpkg --install ${licenseserverServerInstaller}
 
 # clean up installer files
