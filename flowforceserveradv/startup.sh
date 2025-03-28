@@ -6,11 +6,16 @@ TOOLSDIR=${INSTANCEDIR}'/tools/'
 LICENSESDIR='/opt/Altova/licenses'
 
 # Verify licenses for each server to ensure that registration and license assignment only happens once
+# Before we begin, we need to wait for the License Server to be ready
+sleep 10
 
 # Verify license for FlowForce Server
 if ! /opt/Altova/FlowForceServer2025/bin/flowforceserver verifylicense; then
     echo "Registering FlowForce Server with License Server"
-    /opt/Altova/FlowForceServer2025/bin/flowforceserver licenseserver licenseserver
+    until /opt/Altova/FlowForceServer2025/bin/flowforceserver licenseserver licenseserver; do
+        echo "Waiting for License Server to be ready..."
+        sleep 10
+    done
     echo "Assigning license for FlowForce Server"
     /opt/Altova/FlowForceServer2025/bin/flowforceserver assignlicense ${LICENSESDIR}/flowforceserveradv.altova_licenses
     echo "Accepting EULA for FlowForce Server"

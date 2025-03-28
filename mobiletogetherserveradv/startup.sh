@@ -6,12 +6,18 @@ LICENSESDIR='/opt/Altova/licenses'
 # upgrade db if needed
 /opt/Altova/MobileTogetherServer/bin/mobiletogetherserver upgradedb
 
+# Before we begin, we need to wait for the License Server to be ready
+sleep 10
+
 # Verify license for MobileTogether Server
 if ! /opt/Altova/MobileTogetherServer/bin/mobiletogetherserver verifylicense; then
 
     # register with license server
     echo "Registering MobileTogether Server with License Server"
-    /opt/Altova/MobileTogetherServer/bin/mobiletogetherserver licenseserver licenseserver
+    until /opt/Altova/MobileTogetherServer/bin/mobiletogetherserver licenseserver licenseserver; do
+        echo "Waiting for License Server to be ready..."
+        sleep 10
+    done
 
     # assign license
     echo "Assigning license for MobileTogether Server"

@@ -5,14 +5,14 @@ FROM ubuntu:24.04
 ARG LocaleEnUsUTF8='en_US.UTF-8'
 
 # location of the Altova Server installers
-ARG AltovaServerURL='https://cdn.sw.altova.com/v2025/multi-lingual/'
+ARG AltovaServerURL='https://cdn.sw.altova.com/v2025r2/multi-lingual/'
 
 # installer names
-ARG FlowForceServerInstaller='flowforceserveradv-2025-ubuntu.deb'
-ARG DiffDogServerInstaller='diffdogserver-2025-ubuntu.deb'
-ARG MapForceServerInstaller='mapforceserveradv-2025-ubuntu.deb'
-ARG StyleVisionServerInstaller='stylevisionserver-2025-ubuntu.deb'
-ARG RaptorXMLServerInstaller='raptorxmlserver-2025-ubuntu.deb'
+ARG FlowForceServerInstaller='flowforceserveradv-2025rel2-ubuntu.deb'
+ARG DiffDogServerInstaller='diffdogserver-2025rel2-ubuntu.deb'
+ARG MapForceServerInstaller='mapforceserveradv-2025rel2-ubuntu.deb'
+ARG StyleVisionServerInstaller='stylevisionserver-2025rel2-ubuntu.deb'
+ARG RaptorXMLServerInstaller='raptorxmlserver-2025rel2-ubuntu.deb'
 
 # important directories
 ARG INSTANCEDIR='/var/opt/Altova/FlowForceServer/data'

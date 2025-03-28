@@ -11,14 +11,20 @@
 
 services:
   licenseserver:
-    build: licenseserver
+    build: 
+      context: licenseserver
+      platforms: 
+        - linux/amd64
     ports:
       - "8088:8088" # Altova License Server Admin Interface
       - "35355:35355" # Altova License Server RPC Interface
     volumes:
       - licenseserver_data:/var/opt/Altova
   flowforceserveradv:
-    build: flowforceserveradv
+    build: 
+      context: flowforceserveradv
+      platforms: 
+        - linux/amd64
     environment:
       - PYTHONUNBUFFERED=1
     ports:
@@ -31,7 +37,10 @@ services:
     volumes:
       - flowforceserver_data:/var/opt/Altova
   mobiletogetherserveradv:
-    build: mobiletogetherserveradv
+    build: 
+      context: mobiletogetherserveradv
+      platforms: 
+        - linux/amd64
     environment:
       - PYTHONUNBUFFERED=1
     ports:

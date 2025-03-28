@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1
 FROM ubuntu:24.04
 
-ARG AltovaServerURL='https://cdn.sw.altova.com/v2025/multi-lingual/'
-ARG licenseserverServerInstaller='licenseserver-3.16-ubuntu.deb'
+ARG AltovaServerURL='https://cdn.sw.altova.com/v2025r2/multi-lingual/'
+ARG licenseserverServerInstaller='licenseserver-3.17-ubuntu.deb'
 
 # install app dependencies
 RUN apt-get update 
