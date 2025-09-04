@@ -5,8 +5,7 @@ ARG AltovaServerURL='https://cdn.sw.altova.com/v2025r2/multi-lingual/'
 ARG licenseserverServerInstaller='licenseserver-3.17-ubuntu.deb'
 
 # install app dependencies
-RUN apt-get update 
-RUN apt-get install -y wget ca-certificates libidn12 libgssapi-krb5-2 libfontconfig1 libqt5gui5 libqt5widgets5 libldap-2.4 tzdata gpg default-jre sqlite3
+RUN apt-get update && apt-get install -y wget ca-certificates libidn12 libgssapi-krb5-2 libfontconfig1 libqt5gui5 libqt5widgets5 libldap-2.4 tzdata gpg default-jre sqlite3
 
 # install app
 RUN wget ${AltovaServerURL}${licenseserverServerInstaller}
