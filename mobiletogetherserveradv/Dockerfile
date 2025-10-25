@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1
 FROM ubuntu:24.04
 
-ARG MobileTogetherServerURL='https://cdn.sw.altova.com/MT_10.0/'
-ARG MobileTogetherServerInstaller='mobiletogetherserveradv-10.0-ubuntu.deb'
+ARG MobileTogetherServerURL='https://cdn.sw.altova.com/MT_10.1/'
+ARG MobileTogetherServerInstaller='mobiletogetherserveradv-10.1-ubuntu.deb'
 
 # important directories
 ARG LICENSESDIR='/opt/Altova/licenses'

@@ -5,19 +5,19 @@ FROM ubuntu:24.04
 ARG LocaleEnUsUTF8='en_US.UTF-8'
 
 # location of the Altova Server installers
-ARG AltovaServerURL='https://cdn.sw.altova.com/v2025r2/multi-lingual/'
+ARG AltovaServerURL='https://cdn.sw.altova.com/v2026/multi-lingual/'
 
 # installer names
-ARG FlowForceServerInstaller='flowforceserveradv-2025rel2-ubuntu.deb'
-ARG DiffDogServerInstaller='diffdogserver-2025rel2-ubuntu.deb'
-ARG MapForceServerInstaller='mapforceserveradv-2025rel2-ubuntu.deb'
-ARG StyleVisionServerInstaller='stylevisionserver-2025rel2-ubuntu.deb'
-ARG RaptorXMLServerInstaller='raptorxmlserver-2025rel2-ubuntu.deb'
+ARG FlowForceServerInstaller='flowforceserveradv-2026-ubuntu.deb'
+ARG DiffDogServerInstaller='diffdogserver-2026-ubuntu.deb'
+ARG MapForceServerInstaller='mapforceserveradv-2026-ubuntu.deb'
+ARG StyleVisionServerInstaller='stylevisionserver-2026-ubuntu.deb'
+ARG RaptorXMLServerInstaller='raptorxmlserver-2026-ubuntu.deb'
 
 # important directories
 ARG INSTANCEDIR='/var/opt/Altova/FlowForceServer/data'
-ARG APPDATADIR='/var/opt/Altova/FlowForceServer2025'
-ARG INSTALLDIR='/opt/Altova/FlowForceServer2025'
+ARG APPDATADIR='/var/opt/Altova/FlowForceServer2026'
+ARG INSTALLDIR='/opt/Altova/FlowForceServer2026'
 ARG LICENSESDIR='/opt/Altova/licenses'
 ARG TOOLSDIR1=${INSTALLDIR}'/tools/'
 ARG TOOLSDIR2=${INSTANCEDIR}'/tools/'
@@ -58,7 +58,7 @@ COPY startup.sh /startup.sh
 RUN chmod +x /startup.sh
 
 # create log directory
-RUN mkdir -p /var/log/Altova/RaptorXMLServer2025
+RUN mkdir -p /var/log/Altova/RaptorXMLServer2026
 
 # create tools directory for FlowForce Server
 # RUN mkdir -p ${TOOLSDIR1}
@@ -68,11 +68,11 @@ RUN mkdir -p /var/log/Altova/RaptorXMLServer2025
 RUN chmod -R 755 /var/log/Altova
 
 # copy flowforce server configuration files
-COPY flowforce.ini /var/opt/Altova/FlowForceServer2025/flowforce.ini
-COPY flowforceweb.ini /var/opt/Altova/FlowForceServer2025/flowforceweb.ini
+COPY flowforce.ini /var/opt/Altova/FlowForceServer2026/flowforce.ini
+COPY flowforceweb.ini /var/opt/Altova/FlowForceServer2026/flowforceweb.ini
 
 # copy raptorxml server configuration file
-COPY server_config.xml /opt/Altova/RaptorXMLServer2025/etc/server_config.xml
+COPY server_config.xml /opt/Altova/RaptorXMLServer2026/etc/server_config.xml
 
 # copy license files
 RUN mkdir -p ${LICENSESDIR}
@@ -83,20 +83,20 @@ COPY stylevisionserver.altova_licenses ${LICENSESDIR}/stylevisionserver.altova_l
 COPY raptorxmlserver.altova_licenses ${LICENSESDIR}/raptorxmlserver.altova_licenses
 
 # copy tools to INSTALLDIR
-RUN cp /opt/Altova/MapForceServer2025/etc/*.tool ${TOOLSDIR1}
-RUN cp /opt/Altova/StyleVisionServer2025/etc/*.tool ${TOOLSDIR1}
-RUN cp /opt/Altova/RaptorXMLServer2025/etc/*.tool ${TOOLSDIR1}
+RUN cp /opt/Altova/MapForceServer2026/etc/*.tool ${TOOLSDIR1}
+RUN cp /opt/Altova/StyleVisionServer2026/etc/*.tool ${TOOLSDIR1}
+RUN cp /opt/Altova/RaptorXMLServer2026/etc/*.tool ${TOOLSDIR1}
 
 # create flowforce server database and INSTANCEDIR
-RUN /opt/Altova/FlowForceServer2025/bin/flowforceserver initdb --datadir=${INSTANCEDIR}
+RUN /opt/Altova/FlowForceServer2026/bin/flowforceserver initdb --datadir=${INSTANCEDIR}
 
 # copy tools to INSTANCEDIR
-RUN cp /opt/Altova/MapForceServer2025/etc/*.tool ${TOOLSDIR2}
-RUN cp /opt/Altova/StyleVisionServer2025/etc/*.tool ${TOOLSDIR2}
-RUN cp /opt/Altova/RaptorXMLServer2025/etc/*.tool ${TOOLSDIR2}
+RUN cp /opt/Altova/MapForceServer2026/etc/*.tool ${TOOLSDIR2}
+RUN cp /opt/Altova/StyleVisionServer2026/etc/*.tool ${TOOLSDIR2}
+RUN cp /opt/Altova/RaptorXMLServer2026/etc/*.tool ${TOOLSDIR2}
 
 # update flowforce server database and integrate tools
-RUN /opt/Altova/FlowForceServer2025/bin/flowforceserver upgradedb --datadir=${INSTANCEDIR} --integratetools
+RUN /opt/Altova/FlowForceServer2026/bin/flowforceserver upgradedb --datadir=${INSTANCEDIR} --integratetools
 
 # final configuration
 EXPOSE 8082

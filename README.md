@@ -51,11 +51,11 @@ docker compose up -d
 
 Each server component will be available on its respective port. You can adjust ports and other configurations in the `compose.yaml` file as needed. For detailed information about how to use each product, refer to the respective manuals on the Altova website:
 
-- [FlowForce Server 2025 Advanced Edition](https://www.altova.com/manual/FlowForceServer/FlowForceServerAdvanced/)
-- [MapForce Server 2025 Advanced Edition](https://www.altova.com/manual/MapForceServer/MapForceServerAdvanced/)
-- [StyleVision Server 2025](https://www.altova.com/manual/StyleVisionServer/)
-- [RaptorXML+XBRL Server 2025](https://www.altova.com/manual/RaptorXML/raptorxmlxbrlserver/)
-- [DiffDog Server 2025](https://www.altova.com/manual/DiffDogServer/)
+- [FlowForce Server 2026 Advanced Edition](https://www.altova.com/manual/FlowForceServer/FlowForceServerAdvanced/)
+- [MapForce Server 2026 Advanced Edition](https://www.altova.com/manual/MapForceServer/MapForceServerAdvanced/)
+- [StyleVision Server 2026](https://www.altova.com/manual/StyleVisionServer/)
+- [RaptorXML+XBRL Server 2026](https://www.altova.com/manual/RaptorXML/raptorxmlxbrlserver/)
+- [DiffDog Server 2026](https://www.altova.com/manual/DiffDogServer/)
 - [MobileTogether Server Advanced Edition](https://www.altova.com/manual/MobileTogether/mobiletogetherserveradvanced/)
 - [Altova LicenseServer](https://www.altova.com/manual/AltovaLicenseServer/)
 

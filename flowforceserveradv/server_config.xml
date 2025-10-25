@@ -4,19 +4,19 @@
 	<language>en</language>
 
 	<server.unrestricted-filesystem-access>false</server.unrestricted-filesystem-access>
-	<server.output-root-dir>/var/opt/Altova/RaptorXMLServer2025/output/</server.output-root-dir>
-	<server.script-root-dir>/opt/Altova/RaptorXMLServer2025/etc/scripts/</server.script-root-dir>
+	<server.output-root-dir>/var/opt/Altova/RaptorXMLServer2026/output/</server.output-root-dir>
+	<server.script-root-dir>/opt/Altova/RaptorXMLServer2026/etc/scripts/</server.script-root-dir>
 	<!--<server.default-script-api-version>2</server.default-script-api-version>-->
 	<!--<server.catalog-file>custom-catalog.xml</server.catalog-file>-->
-	<server.log-file>/var/log/Altova/RaptorXMLServer2025/server.log</server.log-file>
+	<server.log-file>/var/log/Altova/RaptorXMLServer2026/server.log</server.log-file>
 
 	<http.enable>true</http.enable>
 	<http.environment>production</http.environment>
 	<http.socket-host>0.0.0.0</http.socket-host>
 	<http.socket-port>8087</http.socket-port>
 	<http.log-screen>true</http.log-screen>
-	<http.access-file>/var/log/Altova/RaptorXMLServer2025/access.log</http.access-file>
-	<http.error-file>/var/log/Altova/RaptorXMLServer2025/error.log</http.error-file>
+	<http.access-file>/var/log/Altova/RaptorXMLServer2026/access.log</http.access-file>
+	<http.error-file>/var/log/Altova/RaptorXMLServer2026/error.log</http.error-file>
 
 	<https.enable>false</https.enable>
 	<https.socket-host>0.0.0.0</https.socket-host>
